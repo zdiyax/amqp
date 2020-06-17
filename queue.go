@@ -6,14 +6,14 @@ import (
 
 type (
 	Queue struct {
-		Name string
-		Durable bool
-		AutoDelete bool
-		AutoAck bool
-		Exclusive bool
-		NoWait bool
-		Args amqp.Table
-		Passive bool
+		Name        string
+		Durable     bool
+		AutoDelete  bool
+		AutoAck     bool
+		Exclusive   bool
+		NoWait      bool
+		Args        amqp.Table
+		Passive     bool
 		ConsumerTag string
 
 		Bindings []QueueBinding
@@ -22,13 +22,13 @@ type (
 	}
 
 	QueueBinding struct {
-		Name string
+		Name       string
 		RoutingKey string
-		Exchange string
+		Exchange   string
 
 		NoWait bool
-		Args amqp.Table
+		Args   amqp.Table
 
-		Handler Handler
+		SvcHandler ServiceHandler
 	}
 )

@@ -48,6 +48,8 @@ type (
 
 	Handler func(Message) *Message
 
+	ServiceHandler func(message Message, service interface{}) *Message
+
 	Middleware func(Handler) Handler
 
 	Interceptor func(*Message) *Message
